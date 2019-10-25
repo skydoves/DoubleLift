@@ -18,6 +18,7 @@ Inspired by "Viewing Labels" from the Trello.
 </p>
 
 ## Including in your project
+[![Download](https://api.bintray.com/packages/devmagician/maven/doublelift/images/download.svg)](https://bintray.com/devmagician/maven/doublelift/_latestVersion)
 [![Jitpack](https://jitpack.io/v/skydoves/DoubleLift.svg)](https://jitpack.io/#skydoves/DoubleLift)
 ### Gradle 
 Add below codes to your **root** `build.gradle` file (not your module build.gradle file).
