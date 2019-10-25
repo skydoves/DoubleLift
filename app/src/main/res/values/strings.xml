@@ -1,5 +1,6 @@
 <resources>
-  <string name="app_name">DoubleLiftDemo</string>
-  <string name="lesson">Stars mean different things to different people. For travellers, stars tell them where they are, where they are going. For others, they are just little lights in the sky.</string>
-  <string name="lesson2">For scholars, they are the world of the unknown, yet to be discovered and understood. For my businessman, they are gold. But all stars stay silent.</string>
+    <string name="app_name">DoubleLiftDemo</string>
+    <string name="lesson">Stars mean different things to different people. For travellers, stars tell them where they are, where they are going. For others, they are just little lights in the sky.</string>
+    <string name="lesson2">For scholars, they are the world of the unknown, yet to be discovered and understood. For my businessman, they are gold. But all stars stay silent.</string>
+    <string name="lesson3">Of course, I’ll hurt you. Of course, you’ll hurt me. Of course, we will hurt each other. But that is the very condition of existence. To become spring means accepting the risk of winter. To become a presence means accepting the risk of absence.</string>
 </resources>

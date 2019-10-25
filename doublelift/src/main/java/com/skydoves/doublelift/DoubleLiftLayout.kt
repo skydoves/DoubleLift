@@ -148,6 +148,7 @@ class DoubleLiftLayout : FrameLayout {
   }
 
   private fun lift(doAfterLift: () -> Unit = {}) {
+    setVisibilityChildren(false)
     when (this.liftStartOrientation) {
       LiftStartOrientation.HORIZONTAL -> liftHorizontal(VOID, FULLY) {
         liftVertical(VOID, FULLY) { doAfter(doAfterLift) }
@@ -159,6 +160,7 @@ class DoubleLiftLayout : FrameLayout {
   }
 
   private fun liftReverse(doAfterLift: () -> Unit = {}) {
+    setVisibilityChildren(false)
     when (this.liftStartOrientation) {
       LiftStartOrientation.HORIZONTAL -> liftVertical(FULLY, VOID) {
         liftHorizontal(FULLY, VOID) { doAfter(doAfterLift) }
