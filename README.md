@@ -119,7 +119,7 @@ horizontalDuration | Long | 500L | sets the duration of horizontal lifting.
 verticalDuration | Long | 300L | sets the duration of vertical lifting.
 cornerRadius | Dimension | 4dp | sets the corner radius.
 autoExpand | Boolean | false | invkoe expand() method initially or not.
-startOrientation | LiftStartOrientation.HORIZONTAL | sets the starting orientation of the lifting.
+startOrientation | LiftStartOrientation | LiftStartOrientation.HORIZONTAL | sets the starting orientation of the lifting.
 
 ## Find this library useful? :heart:
 Support it by joining __[stargazers](https://github.com/skydoves/DoubleLift/stargazers)__ for this repository. :star:<br>
