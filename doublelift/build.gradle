@@ -21,7 +21,7 @@ dependencies {
 }
 
 dokka {
-    moduleName = 'rainbow'
+    moduleName = 'doublelift'
     outputFormat = 'html'
     //noinspection GroovyAccessibility
     outputDirectory = "$buildDir/javadoc"

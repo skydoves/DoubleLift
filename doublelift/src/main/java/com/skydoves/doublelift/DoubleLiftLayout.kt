@@ -236,6 +236,7 @@ class DoubleLiftLayout : FrameLayout {
     }
   }
 
+  /** Builder class for creating [DoubleLiftLayout]. */
   @DoubleLiftLayoutDsl
   class Builder(context: Context) {
     private val doubleLiftLayout = DoubleLiftLayout(context)
