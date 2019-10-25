@@ -1,2 +1,2 @@
 # DoubleLift
-🦋 Expands and collapses horizontal and vertical of a layer sequentially.
+🦋 Expands and collapses a layout's horizontal and vertical sequentially.

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/background"
+  android:orientation="vertical">
+
+  <com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:layout_margin="12dp"
+    app:cardBackgroundColor="@color/background800"
+    app:cardElevation="4dp"
+    app:contentPadding="8dp">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <LinearLayout
+        android:id="@+id/tagTitles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.skydoves.doublelift.DoubleLiftLayout
+          android:id="@+id/doubleLiftLayout"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@color/colorPrimary"
+          android:paddingLeft="12dp"
+          android:paddingTop="4dp"
+          android:paddingRight="12dp"
+          android:paddingBottom="4dp"
+          app:doubleLift_cornerRadius="4dp"
+          app:doubleLift_foldedHeight="10dp"
+          app:doubleLift_foldedWidth="50dp">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="New Issue"
+            android:textColor="@color/white_87"
+            android:textStyle="bold" />
+        </com.skydoves.doublelift.DoubleLiftLayout>
+
+        <com.skydoves.doublelift.DoubleLiftLayout
+          android:id="@+id/doubleLiftLayout2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginLeft="8dp"
+          android:background="@color/md_blue_200"
+          android:paddingLeft="12dp"
+          android:paddingTop="4dp"
+          android:paddingRight="12dp"
+          android:paddingBottom="4dp"
+          app:doubleLift_cornerRadius="4dp"
+          app:doubleLift_foldedHeight="10dp"
+          app:doubleLift_foldedWidth="50dp">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Enhancement"
+            android:textColor="@color/white_87"
+            android:textStyle="bold" />
+        </com.skydoves.doublelift.DoubleLiftLayout>
+
+        <com.skydoves.doublelift.DoubleLiftLayout
+          android:id="@+id/doubleLiftLayout3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginLeft="8dp"
+          android:background="@color/md_green_200"
+          android:paddingLeft="12dp"
+          android:paddingTop="4dp"
+          android:paddingRight="12dp"
+          android:paddingBottom="4dp"
+          app:doubleLift_cornerRadius="4dp"
+          app:doubleLift_foldedHeight="10dp"
+          app:doubleLift_foldedWidth="50dp">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Work In Progress"
+            android:textColor="@color/white_87"
+            android:textStyle="bold" />
+        </com.skydoves.doublelift.DoubleLiftLayout>
+      </LinearLayout>
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="DoubleLift"
+        android:textColor="@color/white_93"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/lesson"
+        android:textColor="@color/white_70" />
+    </LinearLayout>
+  </com.google.android.material.card.MaterialCardView>
+
+  <com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:layout_margin="12dp"
+    app:cardBackgroundColor="@color/background800"
+    app:cardElevation="4dp"
+    app:contentPadding="8dp">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <LinearLayout
+        android:id="@+id/tagTitles2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.skydoves.doublelift.DoubleLiftLayout
+          android:id="@+id/doubleLiftLayout4"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@color/md_orange_100"
+          android:paddingLeft="12dp"
+          android:paddingTop="4dp"
+          android:paddingRight="12dp"
+          android:paddingBottom="4dp"
+          app:doubleLift_cornerRadius="4dp"
+          app:doubleLift_foldedHeight="10dp"
+          app:doubleLift_foldedWidth="50dp">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Feature"
+            android:textColor="@color/white_87"
+            android:textStyle="bold" />
+        </com.skydoves.doublelift.DoubleLiftLayout>
+
+        <com.skydoves.doublelift.DoubleLiftLayout
+          android:id="@+id/doubleLiftLayout5"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginLeft="8dp"
+          android:background="@color/colorPrimary"
+          android:paddingLeft="12dp"
+          android:paddingTop="4dp"
+          android:paddingRight="12dp"
+          android:paddingBottom="4dp"
+          app:doubleLift_cornerRadius="4dp"
+          app:doubleLift_foldedHeight="10dp"
+          app:doubleLift_foldedWidth="50dp">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Request"
+            android:textColor="@color/white_87"
+            android:textStyle="bold" />
+        </com.skydoves.doublelift.DoubleLiftLayout>
+
+        <com.skydoves.doublelift.DoubleLiftLayout
+          android:id="@+id/doubleLiftLayout6"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginLeft="8dp"
+          android:background="@color/md_green_200"
+          android:paddingLeft="12dp"
+          android:paddingTop="4dp"
+          android:paddingRight="12dp"
+          android:paddingBottom="4dp"
+          app:doubleLift_cornerRadius="4dp"
+          app:doubleLift_foldedHeight="10dp"
+          app:doubleLift_foldedWidth="50dp">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Android"
+            android:textColor="@color/white_87"
+            android:textStyle="bold" />
+        </com.skydoves.doublelift.DoubleLiftLayout>
+
+        <com.skydoves.doublelift.DoubleLiftLayout
+          android:id="@+id/doubleLiftLayout7"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginLeft="8dp"
+          android:background="@color/md_purple_100"
+          android:paddingLeft="12dp"
+          android:paddingTop="4dp"
+          android:paddingRight="12dp"
+          android:paddingBottom="4dp"
+          app:doubleLift_cornerRadius="4dp"
+          app:doubleLift_foldedHeight="10dp"
+          app:doubleLift_foldedWidth="50dp">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Question"
+            android:textColor="@color/white_87"
+            android:textStyle="bold" />
+        </com.skydoves.doublelift.DoubleLiftLayout>
+
+      </LinearLayout>
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Remember to look up at the stars"
+        android:textColor="@color/white_93"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/lesson2"
+        android:textColor="@color/white_70" />
+    </LinearLayout>
+  </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

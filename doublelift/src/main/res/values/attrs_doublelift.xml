@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="DoubleLiftLayout">
+    <attr name="doubleLift_foldedWidth" format="dimension" />
+    <attr name="doubleLift_foldedHeight" format="dimension" />
+    <attr name="doubleLift_cornerRadius" format="dimension" />
+    <attr name="doubleLift_startOrientation" format="enum">
+      <enum name="horizontal" value="0" />
+      <enum name="vertical" value="1" />
+    </attr>
+    <attr name="doubleLift_horizontalDuration" format="integer" />
+    <attr name="doubleLift_verticalDuration" format="integer" />
+    <attr name="doubleLift_autoExpand" format="boolean" />
+  </declare-styleable>
+</resources>
