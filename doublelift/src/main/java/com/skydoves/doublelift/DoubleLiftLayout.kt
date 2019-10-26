@@ -101,6 +101,15 @@ class DoubleLiftLayout : FrameLayout {
     updateDoubleLifeLayout()
   }
 
+  private fun initializeBackground() {
+    if (this.background is ColorDrawable) {
+      val gradientDrawable = GradientDrawable()
+      gradientDrawable.cornerRadius = this.cornerRadius.toFloat()
+      gradientDrawable.setColor((this.background as ColorDrawable).color)
+      this.background = gradientDrawable
+    }
+  }
+
   private fun updateDoubleLifeLayout() {
     post {
       this.liftedWith = width
@@ -113,15 +122,6 @@ class DoubleLiftLayout : FrameLayout {
       if (this.autoExpand) {
         expand()
       }
-    }
-  }
-
-  private fun initializeBackground() {
-    if (this.background is ColorDrawable) {
-      val gradientDrawable = GradientDrawable()
-      gradientDrawable.cornerRadius = this.cornerRadius.toFloat()
-      gradientDrawable.setColor((this.background as ColorDrawable).color)
-      this.background = gradientDrawable
     }
   }
 
