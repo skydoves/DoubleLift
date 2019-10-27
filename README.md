@@ -72,7 +72,18 @@ Here is a basic example of implementing `DoubleLiftLayout`.
 ```
 
 ### Create using builder class
-We can create an instance of `DoubleLiftLayout` using the builder class.
+We can create an instance of `DoubleLiftLayout` using the `DoubleLiftLayout.Builder` class.
+```kotlin
+val myDoubleLiftLayout = DoubleLiftLayout.Builder(context)
+  .setFoldedWidth(200)
+  .setFoldedHeight(100)
+  .setCornerRadius(6)
+  .setLiftHorizontalDuration(400)
+  .setLiftVerticalDuration(200)
+  .setOnExpandListener { toast("expanded: $it") }
+  .build()
+```
+Or we can create using the kotlin-dsl.
 ```kotlin
 val myDoubleLiftLayout = doubleLiftLayout(this) {
   setFoldedWidth(200)
