@@ -188,44 +188,46 @@ class DoubleLiftLayout : FrameLayout {
   }
 
   private fun liftHorizontal(liftStart: Float, liftEnd: Float, doAfterLift: () -> Unit) {
-    val animator = ValueAnimator.ofFloat(liftStart, liftEnd)
-    animator.duration = this.liftHorizontalDuration
-    animator.doAfterFinishLift { doAfterLift() }
-    animator.applyInterpolator(this.liftAnimation)
-    animator.addUpdateListener {
-      val value = it.animatedValue as Float
-      this.updateLayoutParams {
-        when (liftStart) {
-          VOID -> {
-            var target = foldedWidth + (liftedWith * value).toInt()
-            if (target >= liftedWith) target = liftedWith
-            width = target
-          }
-          FULLY -> {
-            var target = (liftedWith * value).toInt()
-            if (target <= foldedWidth) target = foldedWidth
-            width = target
+    ValueAnimator.ofFloat(liftStart, liftEnd).apply {
+      duration = liftHorizontalDuration
+      doAfterFinishLift { doAfterLift() }
+      applyInterpolator(liftAnimation)
+      addUpdateListener {
+        val value = it.animatedValue as Float
+        updateLayoutParams {
+          when (liftStart) {
+            VOID -> {
+              var target = foldedWidth + (liftedWith * value).toInt()
+              if (target >= liftedWith) target = liftedWith
+              width = target
+            }
+            FULLY -> {
+              var target = (liftedWith * value).toInt()
+              if (target <= foldedWidth) target = foldedWidth
+              width = target
+            }
           }
         }
       }
+      start()
     }
-    animator.start()
   }
 
   private fun liftVertical(liftStart: Float, liftEnd: Float, doAfterLift: () -> Unit) {
-    val animator = ValueAnimator.ofFloat(liftStart, liftEnd)
-    animator.duration = this.liftVerticalDuration
-    animator.doAfterFinishLift { doAfterLift() }
-    animator.applyInterpolator(this.liftAnimation)
-    animator.addUpdateListener {
-      val value = it.animatedValue as Float
-      this.updateLayoutParams {
-        var target = foldedHeight + (liftedHeight * value).toInt()
-        if (target >= liftedHeight) target = liftedHeight
-        height = target
+    ValueAnimator.ofFloat(liftStart, liftEnd).apply {
+      duration = liftVerticalDuration
+      doAfterFinishLift { doAfterLift() }
+      applyInterpolator(liftAnimation)
+      addUpdateListener {
+        val value = it.animatedValue as Float
+        updateLayoutParams {
+          var target = foldedHeight + (liftedHeight * value).toInt()
+          if (target >= liftedHeight) target = liftedHeight
+          height = target
+        }
       }
+      start()
     }
-    animator.start()
   }
 
   private fun setVisibilityChildren(visible: Boolean) {
