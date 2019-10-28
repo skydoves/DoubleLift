@@ -127,6 +127,7 @@ doubleLiftLayout.setOnExpandListener {
   } else {
     toast("collapse")
   }
+}
 ```
 
 ### LiftAnimation
