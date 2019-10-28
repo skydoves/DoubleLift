@@ -129,6 +129,18 @@ doubleLiftLayout.setOnExpandListener {
   }
 ```
 
+### LiftAnimation
+We can customize the expanding and collapsing animation.<br>
+```kotlin
+LiftAnimation.NORMAL
+LiftAnimation.Accelerator
+LiftAnimation.Bounce
+```
+
+NORMAL | Accelerator | Bounce
+| :---------------: | :---------------: | :---------------: |
+| <img src="https://user-images.githubusercontent.com/24237865/67661136-c749d180-f9a3-11e9-82c4-48975a704412.gif" align="center" width="100%"/> | <img src="https://user-images.githubusercontent.com/24237865/67661132-c749d180-f9a3-11e9-8689-904d60a74e42.gif" align="center" width="100%"/> | <img src="https://user-images.githubusercontent.com/24237865/67661134-c749d180-f9a3-11e9-9dfe-6071936f1a30.gif" align="center" width="100%"/>
+
 ## DoubleLiftLayout Attributes
 Attributes | Type | Default | Description
 --- | --- | --- | ---
