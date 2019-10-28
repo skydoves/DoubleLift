@@ -14,7 +14,7 @@ Inspired by "Viewing Labels" from the Trello.
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/24237865/67579148-dbf95000-f77e-11e9-8e90-20fd64304f66.gif" width="32%"/>
-<img src="https://user-images.githubusercontent.com/24237865/67587293-8167f000-f78e-11e9-9b31-5be09d600649.gif" width="32%"/>
+<img src="https://user-images.githubusercontent.com/24237865/67660029-22c69000-f9a1-11e9-9de3-31cfe026bf5a.gif" width="32%"/>
 </p>
 
 ## Including in your project
