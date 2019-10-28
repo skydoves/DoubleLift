@@ -14,7 +14,7 @@ Inspired by "Viewing Labels" from the Trello.
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/24237865/67579148-dbf95000-f77e-11e9-8e90-20fd64304f66.gif" width="32%"/>
-<img src="https://user-images.githubusercontent.com/24237865/67587293-8167f000-f78e-11e9-9b31-5be09d600649.gif" width="32%"/>
+<img src="https://user-images.githubusercontent.com/24237865/67660029-22c69000-f9a1-11e9-9de3-31cfe026bf5a.gif" width="32%"/>
 </p>
 
 ## Including in your project
@@ -127,7 +127,20 @@ doubleLiftLayout.setOnExpandListener {
   } else {
     toast("collapse")
   }
+}
 ```
+
+### LiftAnimation
+We can customize the expanding and collapsing animation.<br>
+```kotlin
+LiftAnimation.NORMAL
+LiftAnimation.Accelerator
+LiftAnimation.Bounce
+```
+
+NORMAL | Accelerator | Bounce
+| :---------------: | :---------------: | :---------------: |
+| <img src="https://user-images.githubusercontent.com/24237865/67661136-c749d180-f9a3-11e9-82c4-48975a704412.gif" align="center" width="100%"/> | <img src="https://user-images.githubusercontent.com/24237865/67661132-c749d180-f9a3-11e9-8689-904d60a74e42.gif" align="center" width="100%"/> | <img src="https://user-images.githubusercontent.com/24237865/67661134-c749d180-f9a3-11e9-9dfe-6071936f1a30.gif" align="center" width="100%"/>
 
 ## DoubleLiftLayout Attributes
 Attributes | Type | Default | Description
