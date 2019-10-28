@@ -32,7 +32,7 @@ allprojects {
 And add a dependency code to your **module**'s `build.gradle` file.
 ```gradle
 dependencies {
-    implementation "com.github.skydoves:doublelift:1.0.0"
+    implementation "com.github.skydoves:doublelift:1.0.1"
 }
 ```
 
@@ -56,7 +56,9 @@ Here is a basic example of implementing `DoubleLiftLayout`.
   app:doubleLift_verticalDuration="300" // sets the duration of vertical lifting.
   app:doubleLift_cornerRadius="4dp" // sets the corner radius.
   app:doubleLift_autoExpand="false" // expand initially or not.
-  app:doubleLift_startOrientation="horizontal">
+  app:doubleLift_startOrientation="horizontal"
+  app:doubleLift_animation="bounce" // sets the lifting animation when expanding and collapsing
+  >
 
   <TextView
     android:layout_width="wrap_content"
@@ -137,6 +139,7 @@ verticalDuration | Long | 300L | sets the duration of vertical lifting.
 cornerRadius | Dimension | 4dp | sets the corner radius.
 autoExpand | Boolean | false | invkoe expand() method initially or not.
 startOrientation | LiftStartOrientation | LiftStartOrientation.HORIZONTAL | sets the starting orientation of the lifting.
+animation | LiftAnimation | LiftAnimation.NORMAL | sets the lifting animation when expanding and collapsing
 
 ## Find this library useful? :heart:
 Support it by joining __[stargazers](https://github.com/skydoves/DoubleLift/stargazers)__ for this repository. :star:<br>
