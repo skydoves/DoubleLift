@@ -36,6 +36,7 @@ class DoubleLiftLayout : FrameLayout {
   var liftStartOrientation: LiftStartOrientation = LiftStartOrientation.HORIZONTAL
   var liftHorizontalDuration: Long = 500L
   var liftVerticalDuration: Long = 300L
+  var liftAnimation: LiftAnimation = LiftAnimation.NORMAL
   var autoExpand: Boolean = false
   var autoCollapse: Boolean = true
   var onExpandListener: OnExpandListener? = null
@@ -87,6 +88,14 @@ class DoubleLiftLayout : FrameLayout {
       LiftStartOrientation.HORIZONTAL.value -> this.liftStartOrientation = LiftStartOrientation.HORIZONTAL
       LiftStartOrientation.VERTICAL.value -> this.liftStartOrientation = LiftStartOrientation.VERTICAL
     }
+    val animation =
+      a.getInteger(R.styleable.DoubleLiftLayout_doubleLift_animation, this.liftAnimation.value)
+    when (animation) {
+      LiftAnimation.NORMAL.value -> this.liftAnimation = LiftAnimation.NORMAL
+      LiftAnimation.ACCELERATE.value -> this.liftAnimation = LiftAnimation.ACCELERATE
+      LiftAnimation.BOUNCE.value -> this.liftAnimation = LiftAnimation.BOUNCE
+    }
+
     this.liftHorizontalDuration =
       a.getInt(R.styleable.DoubleLiftLayout_doubleLift_horizontalDuration, this.liftHorizontalDuration.toInt()).toLong()
     this.liftVerticalDuration =
@@ -181,6 +190,8 @@ class DoubleLiftLayout : FrameLayout {
   private fun liftHorizontal(liftStart: Float, liftEnd: Float, doAfterLift: () -> Unit) {
     val animator = ValueAnimator.ofFloat(liftStart, liftEnd)
     animator.duration = this.liftHorizontalDuration
+    animator.doAfterFinishLift { doAfterLift() }
+    animator.applyInterpolator(this.liftAnimation)
     animator.addUpdateListener {
       val value = it.animatedValue as Float
       this.updateLayoutParams {
@@ -197,7 +208,6 @@ class DoubleLiftLayout : FrameLayout {
           }
         }
       }
-      value.doAfterFinishLift(liftEnd) { doAfterLift() }
     }
     animator.start()
   }
@@ -205,6 +215,8 @@ class DoubleLiftLayout : FrameLayout {
   private fun liftVertical(liftStart: Float, liftEnd: Float, doAfterLift: () -> Unit) {
     val animator = ValueAnimator.ofFloat(liftStart, liftEnd)
     animator.duration = this.liftVerticalDuration
+    animator.doAfterFinishLift { doAfterLift() }
+    animator.applyInterpolator(this.liftAnimation)
     animator.addUpdateListener {
       val value = it.animatedValue as Float
       this.updateLayoutParams {
@@ -212,15 +224,8 @@ class DoubleLiftLayout : FrameLayout {
         if (target >= liftedHeight) target = liftedHeight
         height = target
       }
-      value.doAfterFinishLift(liftEnd) { doAfterLift() }
     }
     animator.start()
-  }
-
-  private fun Float.doAfterFinishLift(liftLast: Float, doAfterLift: () -> Unit) {
-    if (this == liftLast) {
-      doAfterLift()
-    }
   }
 
   private fun setVisibilityChildren(visible: Boolean) {
@@ -249,6 +254,7 @@ class DoubleLiftLayout : FrameLayout {
     fun setLiftStartOrientation(value: LiftStartOrientation) = apply { this.doubleLiftLayout.liftStartOrientation = value }
     fun setLiftHorizontalDuration(value: Long) = apply { this.doubleLiftLayout.liftHorizontalDuration = value }
     fun setLiftVerticalDuration(value: Long) = apply { this.doubleLiftLayout.liftVerticalDuration = value }
+    fun setLiftAnimation(value: LiftAnimation) = apply { this.doubleLiftLayout.liftAnimation = value }
     fun setAutoDoubleLift(value: Boolean) = apply { this.doubleLiftLayout.autoExpand = value }
     fun setAutoCollapse(value: Boolean) = apply { this.doubleLiftLayout.autoCollapse = value }
     fun setOnExpandListener(value: OnExpandListener) = apply { this.doubleLiftLayout.onExpandListener = value }

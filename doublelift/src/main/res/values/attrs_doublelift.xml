@@ -4,6 +4,11 @@
     <attr name="doubleLift_foldedWidth" format="dimension" />
     <attr name="doubleLift_foldedHeight" format="dimension" />
     <attr name="doubleLift_cornerRadius" format="dimension" />
+    <attr name="doubleLift_animation" format="enum">
+      <enum name="normal" value="0" />
+      <enum name="accelerate" value="1" />
+      <enum name="bounce" value="2" />
+    </attr>
     <attr name="doubleLift_startOrientation" format="enum">
       <enum name="horizontal" value="0" />
       <enum name="vertical" value="1" />

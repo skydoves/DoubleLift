@@ -16,7 +16,8 @@
     android:padding="12dp"
     app:doubleLift_cornerRadius="6dp"
     app:doubleLift_foldedHeight="18dp"
-    app:doubleLift_foldedWidth="80dp">
+    app:doubleLift_foldedWidth="80dp"
+    app:doubleLift_animation="bounce">
 
     <LinearLayout
       android:layout_width="match_parent"
@@ -51,7 +52,8 @@
     android:padding="12dp"
     app:doubleLift_cornerRadius="6dp"
     app:doubleLift_foldedHeight="18dp"
-    app:doubleLift_foldedWidth="80dp">
+    app:doubleLift_foldedWidth="80dp"
+    app:doubleLift_animation="accelerate">
 
     <LinearLayout
       android:layout_width="match_parent"
@@ -87,7 +89,8 @@
     app:doubleLift_cornerRadius="6dp"
     app:doubleLift_foldedHeight="80dp"
     app:doubleLift_foldedWidth="18dp"
-    app:doubleLift_startOrientation="vertical">
+    app:doubleLift_startOrientation="vertical"
+    app:doubleLift_animation="accelerate">
 
     <LinearLayout
       android:layout_width="match_parent"
