@@ -53,7 +53,11 @@ class DoubleLiftLayout : FrameLayout {
     getAttrs(attributeSet)
   }
 
-  constructor(context: Context, attributeSet: AttributeSet, defStyle: Int) : super(context, attributeSet, defStyle) {
+  constructor(context: Context, attributeSet: AttributeSet, defStyle: Int) : super(
+    context,
+    attributeSet,
+    defStyle
+  ) {
     getAttrs(attributeSet, defStyle)
   }
 
@@ -67,7 +71,12 @@ class DoubleLiftLayout : FrameLayout {
   }
 
   private fun getAttrs(attributeSet: AttributeSet, defStyleAttr: Int) {
-    val typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.DoubleLiftLayout, defStyleAttr, 0)
+    val typedArray = context.obtainStyledAttributes(
+      attributeSet,
+      R.styleable.DoubleLiftLayout,
+      defStyleAttr,
+      0
+    )
     try {
       setTypeArray(typedArray)
     } finally {
@@ -77,19 +86,36 @@ class DoubleLiftLayout : FrameLayout {
 
   private fun setTypeArray(a: TypedArray) {
     this.foldedWidth =
-      a.getDimensionPixelSize(R.styleable.DoubleLiftLayout_doubleLift_foldedWidth, this.foldedWidth)
+      a.getDimensionPixelSize(
+        R.styleable.DoubleLiftLayout_doubleLift_foldedWidth,
+        this.foldedWidth
+      )
     this.foldedHeight =
-      a.getDimensionPixelSize(R.styleable.DoubleLiftLayout_doubleLift_foldedHeight, this.foldedHeight)
+      a.getDimensionPixelSize(
+        R.styleable.DoubleLiftLayout_doubleLift_foldedHeight,
+        this.foldedHeight
+      )
     this.cornerRadius =
-      a.getDimensionPixelSize(R.styleable.DoubleLiftLayout_doubleLift_cornerRadius, this.cornerRadius)
+      a.getDimensionPixelSize(
+        R.styleable.DoubleLiftLayout_doubleLift_cornerRadius,
+        this.cornerRadius
+      )
     val liftStartOrientation =
-      a.getInteger(R.styleable.DoubleLiftLayout_doubleLift_startOrientation, this.liftStartOrientation.value)
+      a.getInteger(
+        R.styleable.DoubleLiftLayout_doubleLift_startOrientation,
+        this.liftStartOrientation.value
+      )
     when (liftStartOrientation) {
-      LiftStartOrientation.HORIZONTAL.value -> this.liftStartOrientation = LiftStartOrientation.HORIZONTAL
-      LiftStartOrientation.VERTICAL.value -> this.liftStartOrientation = LiftStartOrientation.VERTICAL
+      LiftStartOrientation.HORIZONTAL.value -> this.liftStartOrientation =
+        LiftStartOrientation.HORIZONTAL
+      LiftStartOrientation.VERTICAL.value -> this.liftStartOrientation =
+        LiftStartOrientation.VERTICAL
     }
     val animation =
-      a.getInteger(R.styleable.DoubleLiftLayout_doubleLift_animation, this.liftAnimation.value)
+      a.getInteger(
+        R.styleable.DoubleLiftLayout_doubleLift_animation,
+        this.liftAnimation.value
+      )
     when (animation) {
       LiftAnimation.NORMAL.value -> this.liftAnimation = LiftAnimation.NORMAL
       LiftAnimation.ACCELERATE.value -> this.liftAnimation = LiftAnimation.ACCELERATE
@@ -97,9 +123,15 @@ class DoubleLiftLayout : FrameLayout {
     }
 
     this.liftHorizontalDuration =
-      a.getInt(R.styleable.DoubleLiftLayout_doubleLift_horizontalDuration, this.liftHorizontalDuration.toInt()).toLong()
+      a.getInt(
+        R.styleable.DoubleLiftLayout_doubleLift_horizontalDuration,
+        this.liftHorizontalDuration.toInt()
+      ).toLong()
     this.liftVerticalDuration =
-      a.getInteger(R.styleable.DoubleLiftLayout_doubleLift_verticalDuration, this.liftVerticalDuration.toInt()).toLong()
+      a.getInteger(
+        R.styleable.DoubleLiftLayout_doubleLift_verticalDuration,
+        this.liftVerticalDuration.toInt()
+      ).toLong()
     this.autoExpand =
       a.getBoolean(R.styleable.DoubleLiftLayout_doubleLift_autoExpand, this.autoExpand)
   }
@@ -134,8 +166,14 @@ class DoubleLiftLayout : FrameLayout {
     }
   }
 
+  /**
+   * This functionality is for supporting Java language.
+   * Expand the width and height size sequentially.
+   */
+  fun expand() = expand { }
+
   /** Expand the width and height size sequentially. */
-  fun expand(doAfterLift: () -> Unit = {}) {
+  fun expand(doAfterLift: () -> Unit) {
     post {
       if (!this.isExpanded && !this.isLifting) {
         this.isExpanded = true
@@ -145,8 +183,14 @@ class DoubleLiftLayout : FrameLayout {
     }
   }
 
+  /**
+   * This functionality is for supporting Java language.
+   * Collapse the width and height size sequentially.
+   */
+  fun collapse() = collapse { }
+
   /** Collapse the width and height size sequentially. */
-  fun collapse(doAfterLift: () -> Unit = {}) {
+  fun collapse(doAfterLift: () -> Unit) {
     post {
       if (this.isExpanded && !this.isLifting) {
         this.isExpanded = false
@@ -253,13 +297,23 @@ class DoubleLiftLayout : FrameLayout {
     fun setFoldedWidth(value: Int) = apply { this.doubleLiftLayout.foldedWidth = value }
     fun setFoldedHeight(value: Int) = apply { this.doubleLiftLayout.foldedHeight = value }
     fun setCornerRadius(value: Int) = apply { this.doubleLiftLayout.cornerRadius = value }
-    fun setLiftStartOrientation(value: LiftStartOrientation) = apply { this.doubleLiftLayout.liftStartOrientation = value }
-    fun setLiftHorizontalDuration(value: Long) = apply { this.doubleLiftLayout.liftHorizontalDuration = value }
-    fun setLiftVerticalDuration(value: Long) = apply { this.doubleLiftLayout.liftVerticalDuration = value }
-    fun setLiftAnimation(value: LiftAnimation) = apply { this.doubleLiftLayout.liftAnimation = value }
+    fun setLiftStartOrientation(value: LiftStartOrientation) =
+      apply { this.doubleLiftLayout.liftStartOrientation = value }
+
+    fun setLiftHorizontalDuration(value: Long) =
+      apply { this.doubleLiftLayout.liftHorizontalDuration = value }
+
+    fun setLiftVerticalDuration(value: Long) =
+      apply { this.doubleLiftLayout.liftVerticalDuration = value }
+
+    fun setLiftAnimation(value: LiftAnimation) =
+      apply { this.doubleLiftLayout.liftAnimation = value }
+
     fun setAutoDoubleLift(value: Boolean) = apply { this.doubleLiftLayout.autoExpand = value }
     fun setAutoCollapse(value: Boolean) = apply { this.doubleLiftLayout.autoCollapse = value }
-    fun setOnExpandListener(value: OnExpandListener) = apply { this.doubleLiftLayout.onExpandListener = value }
+    fun setOnExpandListener(value: OnExpandListener) =
+      apply { this.doubleLiftLayout.onExpandListener = value }
+
     fun setOnExpandListener(block: (Boolean) -> Unit) = apply {
       this.doubleLiftLayout.onExpandListener = object : OnExpandListener {
         override fun onExpand(isExpanded: Boolean) {
