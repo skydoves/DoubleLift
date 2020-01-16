@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-🦋 Expands and collapses a layout's horizontal and vertical sequentially.<br>
+🦋 Expands and collapses a layout horizontally and vertically sequentially.<br>
 Inspired by "Viewing Labels" from the Trello.
 </p>
 

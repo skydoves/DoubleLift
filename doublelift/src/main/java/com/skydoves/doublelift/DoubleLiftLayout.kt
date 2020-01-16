@@ -23,15 +23,16 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
 import android.widget.FrameLayout
+import androidx.annotation.Px
 
-/** DoubleLiftLayout expands and collapses a layout's horizontal and vertical sequentially. */
+/** DoubleLiftLayout expands and collapses a layout horizontally and vertically sequentially. */
 @Suppress("unused")
 class DoubleLiftLayout : FrameLayout {
 
-  var foldedWidth: Int = 0
-  var foldedHeight: Int = 0
-  var liftedWith: Int = 0
-  var liftedHeight: Int = 0
+  @Px var foldedWidth: Int = 0
+  @Px var foldedHeight: Int = 0
+  @Px var liftedWith: Int = 0
+  @Px var liftedHeight: Int = 0
   var isExpanded: Boolean = false
   var liftStartOrientation: LiftStartOrientation = LiftStartOrientation.HORIZONTAL
   var liftHorizontalDuration: Long = 500L
@@ -40,7 +41,7 @@ class DoubleLiftLayout : FrameLayout {
   var autoExpand: Boolean = false
   var autoCollapse: Boolean = true
   var onExpandListener: OnExpandListener? = null
-  var cornerRadius: Int = 4
+  @Px var cornerRadius: Int = 4
     set(value) {
       field = value
       updateDoubleLifeLayout()
@@ -144,10 +145,10 @@ class DoubleLiftLayout : FrameLayout {
 
   private fun initializeBackground() {
     if (this.background is ColorDrawable) {
-      val gradientDrawable = GradientDrawable()
-      gradientDrawable.cornerRadius = this.cornerRadius.toFloat()
-      gradientDrawable.setColor((this.background as ColorDrawable).color)
-      this.background = gradientDrawable
+      this.background = GradientDrawable().apply {
+        cornerRadius = this@DoubleLiftLayout.cornerRadius.toFloat()
+        setColor((background as ColorDrawable).color)
+      }
     }
   }
 
@@ -294,9 +295,9 @@ class DoubleLiftLayout : FrameLayout {
   class Builder(context: Context) {
     private val doubleLiftLayout = DoubleLiftLayout(context)
 
-    fun setFoldedWidth(value: Int) = apply { this.doubleLiftLayout.foldedWidth = value }
-    fun setFoldedHeight(value: Int) = apply { this.doubleLiftLayout.foldedHeight = value }
-    fun setCornerRadius(value: Int) = apply { this.doubleLiftLayout.cornerRadius = value }
+    fun setFoldedWidth(@Px value: Int) = apply { this.doubleLiftLayout.foldedWidth = value }
+    fun setFoldedHeight(@Px value: Int) = apply { this.doubleLiftLayout.foldedHeight = value }
+    fun setCornerRadius(@Px value: Int) = apply { this.doubleLiftLayout.cornerRadius = value }
     fun setLiftStartOrientation(value: LiftStartOrientation) =
       apply { this.doubleLiftLayout.liftStartOrientation = value }
 
