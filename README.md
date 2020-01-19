@@ -4,6 +4,7 @@
   <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
   <a href="https://android-arsenal.com/api?level=16"><img alt="API" src="https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat"/></a>
   <a href="https://travis-ci.com/skydoves/DoubleLift"><img alt="Build Status" src="https://travis-ci.com/skydoves/DoubleLift.svg?branch=master"/></a>
+  <a href="https://androidweekly.net/issues/issue-397"><img alt="Build Status" src="https://img.shields.io/badge/Android%20Weekly-%23397-orange"/></a>
   <a href="https://skydoves.github.io/libraries/doublelift/javadoc/doublelift/com.skydoves.doublelift/index.html"><img alt="Javadoc" src="https://img.shields.io/badge/Javadoc-DoubleLift-yellow"/></a>
 </p>
 
@@ -75,6 +76,22 @@ Here is a basic example of implementing `DoubleLiftLayout`.
 
 ### Create using builder class
 We can create an instance of `DoubleLiftLayout` using the `DoubleLiftLayout.Builder` class.
+#### Java
+```java
+DoubleLiftLayout doubleLiftLayout = new DoubleLiftLayout.Builder(context)
+    .setFoldedWidth(200)
+    .setFoldedHeight(100)
+    .setCornerRadius(6)
+    .setLiftHorizontalDuration(400)
+    .setLiftVerticalDuration(200)
+    .setOnExpandListener(new OnExpandListener() {
+      @Override public void onExpand(boolean b) {
+        toast("expanded: $it");
+      }
+    }).build();
+```
+
+#### Kotlin
 ```kotlin
 val myDoubleLiftLayout = DoubleLiftLayout.Builder(context)
   .setFoldedWidth(200)
@@ -100,19 +117,28 @@ val myDoubleLiftLayout = doubleLiftLayout(this) {
 ### Expand and Collapse
 We can expand and collapse using the below methods.
 ```kotlin
-doubleLiftLayout.expand() // expand the width and height size sequentially.
-doubleLiftLayout.collapse() // collapse the width and height size sequentially.
+doubleLiftLayout.expand(); // expand the width and height size sequentially.
+doubleLiftLayout.collapse(); // collapse the width and height size sequentially.
 ```
 
-or we can do something after expanded using lambda.
+or we can do something after expanded using lambda in Kotlin.
 
 ```kotlin
-doubleLiftLayout.expand { toast("expanded") }
-doubleLiftLayout.collapse { toast("collapsed") }
+doubleLiftLayout.expand { toast("expanded!") }
+doubleLiftLayout.collapse { toast("collapsed!") }
 ```
 
 ### OnExpandListener
 We can listen to the `DoubleLiftLayout` is expanded or collapsed.
+#### Java
+```java
+.setOnExpandListener(new OnExpandListener() {
+  @Override public void onExpand(boolean isExpanded) {
+    toast("expanded: $it");
+  }
+}
+```
+#### Kotlin
 ```kotlin
 doubleLiftLayout.onExpandListener = object : OnExpandListener {
   override fun onExpand(isExpanded: Boolean) {
