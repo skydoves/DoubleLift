@@ -85,8 +85,8 @@ DoubleLiftLayout doubleLiftLayout = new DoubleLiftLayout.Builder(context)
     .setLiftHorizontalDuration(400)
     .setLiftVerticalDuration(200)
     .setOnExpandListener(new OnExpandListener() {
-      @Override public void onExpand(boolean b) {
-        toast("expanded: $it");
+      @Override public void onExpand(boolean isExpanded) {
+        toast("expanded: " + isExpanded);
       }
     }).build();
 ```
@@ -134,7 +134,7 @@ We can listen to the `DoubleLiftLayout` is expanded or collapsed.
 ```java
 .setOnExpandListener(new OnExpandListener() {
   @Override public void onExpand(boolean isExpanded) {
-    toast("expanded: $it");
+    toast("expanded: " + isExpanded);
   }
 }
 ```
