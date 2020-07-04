@@ -121,6 +121,7 @@ class DoubleLiftLayout : FrameLayout {
       LiftAnimation.NORMAL.value -> this.liftAnimation = LiftAnimation.NORMAL
       LiftAnimation.ACCELERATE.value -> this.liftAnimation = LiftAnimation.ACCELERATE
       LiftAnimation.BOUNCE.value -> this.liftAnimation = LiftAnimation.BOUNCE
+      LiftAnimation.OVERSHOOT.value -> this.liftAnimation = LiftAnimation.OVERSHOOT
     }
 
     this.liftHorizontalDuration =

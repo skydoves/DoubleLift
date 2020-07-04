@@ -6,10 +6,12 @@
   android:background="@color/background"
   android:orientation="vertical">
 
-  <com.google.android.material.card.MaterialCardView
+  <androidx.cardview.widget.CardView
+    android:id="@+id/cardView0"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
+    android:layout_height="wrap_content"
     android:layout_margin="12dp"
+    android:foreground="?android:attr/selectableItemBackground"
     app:cardBackgroundColor="@color/background800"
     app:cardElevation="4dp"
     app:contentPadding="8dp">
@@ -36,16 +38,18 @@
           android:paddingBottom="4dp"
           app:doubleLift_cornerRadius="4dp"
           app:doubleLift_foldedHeight="10dp"
-          app:doubleLift_foldedWidth="50dp">
+          app:doubleLift_foldedWidth="50dp"
+          app:doubleLift_horizontalDuration="250"
+          app:doubleLift_verticalDuration="150">
 
           <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text="New Issue"
             android:textColor="@color/white_87"
             android:textStyle="bold" />
-
         </com.skydoves.doublelift.DoubleLiftLayout>
 
         <com.skydoves.doublelift.DoubleLiftLayout
@@ -61,12 +65,15 @@
           android:paddingBottom="4dp"
           app:doubleLift_cornerRadius="4dp"
           app:doubleLift_foldedHeight="10dp"
-          app:doubleLift_foldedWidth="50dp">
+          app:doubleLift_foldedWidth="50dp"
+          app:doubleLift_horizontalDuration="250"
+          app:doubleLift_verticalDuration="150">
 
           <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text="Enhancement"
             android:textColor="@color/white_87"
             android:textStyle="bold" />
@@ -85,16 +92,20 @@
           android:paddingBottom="4dp"
           app:doubleLift_cornerRadius="4dp"
           app:doubleLift_foldedHeight="10dp"
-          app:doubleLift_foldedWidth="50dp">
+          app:doubleLift_foldedWidth="50dp"
+          app:doubleLift_horizontalDuration="250"
+          app:doubleLift_verticalDuration="150">
 
           <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text="Work In Progress"
             android:textColor="@color/white_87"
             android:textStyle="bold" />
         </com.skydoves.doublelift.DoubleLiftLayout>
+
       </LinearLayout>
 
       <TextView
@@ -112,13 +123,17 @@
         android:layout_marginTop="4dp"
         android:text="@string/lesson"
         android:textColor="@color/white_70" />
-    </LinearLayout>
-  </com.google.android.material.card.MaterialCardView>
 
-  <com.google.android.material.card.MaterialCardView
+    </LinearLayout>
+
+  </androidx.cardview.widget.CardView>
+
+  <androidx.cardview.widget.CardView
+    android:id="@+id/cardView1"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
+    android:layout_height="wrap_content"
     android:layout_margin="12dp"
+    android:foreground="?android:attr/selectableItemBackground"
     app:cardBackgroundColor="@color/background800"
     app:cardElevation="4dp"
     app:contentPadding="8dp">
@@ -145,12 +160,15 @@
           android:paddingBottom="4dp"
           app:doubleLift_cornerRadius="4dp"
           app:doubleLift_foldedHeight="10dp"
-          app:doubleLift_foldedWidth="50dp">
+          app:doubleLift_foldedWidth="50dp"
+          app:doubleLift_horizontalDuration="250"
+          app:doubleLift_verticalDuration="150">
 
           <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text="Feature"
             android:textColor="@color/white_87"
             android:textStyle="bold" />
@@ -169,12 +187,15 @@
           android:paddingBottom="4dp"
           app:doubleLift_cornerRadius="4dp"
           app:doubleLift_foldedHeight="10dp"
-          app:doubleLift_foldedWidth="50dp">
+          app:doubleLift_foldedWidth="50dp"
+          app:doubleLift_horizontalDuration="250"
+          app:doubleLift_verticalDuration="150">
 
           <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text="Request"
             android:textColor="@color/white_87"
             android:textStyle="bold" />
@@ -193,12 +214,15 @@
           android:paddingBottom="4dp"
           app:doubleLift_cornerRadius="4dp"
           app:doubleLift_foldedHeight="10dp"
-          app:doubleLift_foldedWidth="50dp">
+          app:doubleLift_foldedWidth="50dp"
+          app:doubleLift_horizontalDuration="250"
+          app:doubleLift_verticalDuration="150">
 
           <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text="Android"
             android:textColor="@color/white_87"
             android:textStyle="bold" />
@@ -217,15 +241,20 @@
           android:paddingBottom="4dp"
           app:doubleLift_cornerRadius="4dp"
           app:doubleLift_foldedHeight="10dp"
-          app:doubleLift_foldedWidth="50dp">
+          app:doubleLift_foldedWidth="50dp"
+          app:doubleLift_horizontalDuration="250"
+          app:doubleLift_verticalDuration="150">
 
           <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:gravity="center"
+            android:maxLines="1"
             android:text="Question"
             android:textColor="@color/white_87"
             android:textStyle="bold" />
+
         </com.skydoves.doublelift.DoubleLiftLayout>
 
       </LinearLayout>
@@ -247,6 +276,6 @@
         android:textColor="@color/white_70" />
     </LinearLayout>
 
-  </com.google.android.material.card.MaterialCardView>
+  </androidx.cardview.widget.CardView>
 
 </LinearLayout>

@@ -21,6 +21,7 @@ import android.animation.AnimatorListenerAdapter
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.BounceInterpolator
 import android.view.animation.LinearInterpolator
+import android.view.animation.OvershootInterpolator
 
 internal fun Animator.doAfterFinishLift(doAfterLift: () -> Unit) {
   this.addListener(object : AnimatorListenerAdapter() {
@@ -36,5 +37,6 @@ internal fun Animator.applyInterpolator(liftAnimation: LiftAnimation) {
     LiftAnimation.NORMAL -> this.interpolator = LinearInterpolator()
     LiftAnimation.ACCELERATE -> this.interpolator = AccelerateInterpolator()
     LiftAnimation.BOUNCE -> this.interpolator = BounceInterpolator()
+    LiftAnimation.OVERSHOOT -> this.interpolator = OvershootInterpolator()
   }
 }

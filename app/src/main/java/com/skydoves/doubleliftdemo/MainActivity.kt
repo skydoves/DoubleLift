@@ -19,6 +19,8 @@ package com.skydoves.doubleliftdemo
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.cardView0
+import kotlinx.android.synthetic.main.activity_main.cardView1
 import kotlinx.android.synthetic.main.activity_main.doubleLiftLayout
 import kotlinx.android.synthetic.main.activity_main.doubleLiftLayout2
 import kotlinx.android.synthetic.main.activity_main.doubleLiftLayout3
@@ -26,8 +28,6 @@ import kotlinx.android.synthetic.main.activity_main.doubleLiftLayout4
 import kotlinx.android.synthetic.main.activity_main.doubleLiftLayout5
 import kotlinx.android.synthetic.main.activity_main.doubleLiftLayout6
 import kotlinx.android.synthetic.main.activity_main.doubleLiftLayout7
-import kotlinx.android.synthetic.main.activity_main.tagTitles
-import kotlinx.android.synthetic.main.activity_main.tagTitles2
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
-    tagTitles.setOnClickListener {
+    cardView0.setOnClickListener {
       if (!doubleLiftLayout.isExpanded) {
         doubleLiftLayout.expand()
         doubleLiftLayout2.expand()
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
       }
     }
 
-    tagTitles2.setOnClickListener {
+    cardView1.setOnClickListener {
       if (!doubleLiftLayout4.isExpanded) {
         doubleLiftLayout4.expand()
         doubleLiftLayout5.expand()

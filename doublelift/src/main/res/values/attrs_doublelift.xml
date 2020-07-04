@@ -8,6 +8,7 @@
       <enum name="normal" value="0" />
       <enum name="accelerate" value="1" />
       <enum name="bounce" value="2" />
+      <enum name="overshoot" value="3" />
     </attr>
     <attr name="doubleLift_startOrientation" format="enum">
       <enum name="horizontal" value="0" />
