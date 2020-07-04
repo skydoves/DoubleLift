@@ -10,14 +10,14 @@
   <com.skydoves.doublelift.DoubleLiftLayout
     android:id="@+id/doubleLiftLayout"
     android:layout_width="match_parent"
-    android:layout_height="135dp"
+    android:layout_height="wrap_content"
     android:background="@color/md_blue_200"
     android:foreground="?attr/selectableItemBackground"
     android:padding="12dp"
+    app:doubleLift_animation="bounce"
     app:doubleLift_cornerRadius="6dp"
     app:doubleLift_foldedHeight="18dp"
-    app:doubleLift_foldedWidth="80dp"
-    app:doubleLift_animation="bounce">
+    app:doubleLift_foldedWidth="80dp">
 
     <LinearLayout
       android:layout_width="match_parent"
@@ -26,7 +26,7 @@
       android:orientation="vertical">
 
       <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="DoubleLift"
         android:textColor="@color/white_93"
@@ -34,26 +34,28 @@
         android:textStyle="bold" />
 
       <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:maxHeight="135dp"
         android:text="@string/lesson"
         android:textColor="@color/white_70" />
     </LinearLayout>
+
   </com.skydoves.doublelift.DoubleLiftLayout>
 
   <com.skydoves.doublelift.DoubleLiftLayout
     android:id="@+id/doubleLiftLayout2"
     android:layout_width="match_parent"
-    android:layout_height="125dp"
+    android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
     android:background="@color/md_orange_100"
     android:foreground="?attr/selectableItemBackground"
     android:padding="12dp"
+    app:doubleLift_animation="accelerate"
     app:doubleLift_cornerRadius="6dp"
     app:doubleLift_foldedHeight="18dp"
-    app:doubleLift_foldedWidth="80dp"
-    app:doubleLift_animation="accelerate">
+    app:doubleLift_foldedWidth="80dp">
 
     <LinearLayout
       android:layout_width="match_parent"
@@ -62,35 +64,37 @@
       android:orientation="vertical">
 
       <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="Remember to look up at the stars"
         android:textColor="@color/white_93"
         android:textSize="18sp"
         android:textStyle="bold" />
 
       <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="@string/lesson2"
         android:textColor="@color/white_70" />
+
     </LinearLayout>
+
   </com.skydoves.doublelift.DoubleLiftLayout>
 
   <com.skydoves.doublelift.DoubleLiftLayout
     android:id="@+id/doubleLiftLayout3"
     android:layout_width="match_parent"
-    android:layout_height="155dp"
+    android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
     android:background="@color/colorPrimary"
     android:foreground="?attr/selectableItemBackground"
     android:padding="12dp"
+    app:doubleLift_animation="accelerate"
     app:doubleLift_cornerRadius="6dp"
     app:doubleLift_foldedHeight="80dp"
     app:doubleLift_foldedWidth="18dp"
-    app:doubleLift_startOrientation="vertical"
-    app:doubleLift_animation="accelerate">
+    app:doubleLift_startOrientation="vertical">
 
     <LinearLayout
       android:layout_width="match_parent"
@@ -99,7 +103,7 @@
       android:orientation="vertical">
 
       <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Remember to look up at the stars"
         android:textColor="@color/white_93"
@@ -107,11 +111,13 @@
         android:textStyle="bold" />
 
       <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="@string/lesson3"
         android:textColor="@color/white_70" />
     </LinearLayout>
+
   </com.skydoves.doublelift.DoubleLiftLayout>
+
 </LinearLayout>

@@ -45,6 +45,7 @@
             android:text="New Issue"
             android:textColor="@color/white_87"
             android:textStyle="bold" />
+
         </com.skydoves.doublelift.DoubleLiftLayout>
 
         <com.skydoves.doublelift.DoubleLiftLayout
@@ -245,5 +246,7 @@
         android:text="@string/lesson2"
         android:textColor="@color/white_70" />
     </LinearLayout>
+
   </com.google.android.material.card.MaterialCardView>
+
 </LinearLayout>

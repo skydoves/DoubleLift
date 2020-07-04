@@ -18,5 +18,6 @@ package com.skydoves.doublelift
 
 // The ratio of the collapsed size.
 internal const val VOID: Float = 0f
+
 // The ratio of the fully expanded size.
 internal const val FULLY: Float = 1f
