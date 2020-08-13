@@ -27,7 +27,12 @@ import androidx.annotation.Px
 
 /** DoubleLiftLayout expands and collapses a layout horizontally and vertically sequentially. */
 @Suppress("unused")
-class DoubleLiftLayout : FrameLayout {
+class DoubleLiftLayout
+@JvmOverloads constructor(
+  context: Context,
+  attributeSet: AttributeSet? = null,
+  defStyle: Int = 0
+) : FrameLayout(context, attributeSet, defStyle) {
 
   @Px var foldedWidth: Int = 0
   @Px var foldedHeight: Int = 0
@@ -48,30 +53,11 @@ class DoubleLiftLayout : FrameLayout {
     }
   private var isLifting: Boolean = false
 
-  constructor(context: Context) : super(context)
-
-  constructor(context: Context, attributeSet: AttributeSet) : super(context, attributeSet) {
-    getAttrs(attributeSet)
-  }
-
-  constructor(context: Context, attributeSet: AttributeSet, defStyle: Int) : super(
-    context,
-    attributeSet,
-    defStyle
-  ) {
+  init {
     getAttrs(attributeSet, defStyle)
   }
 
-  private fun getAttrs(attributeSet: AttributeSet) {
-    val typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.DoubleLiftLayout)
-    try {
-      setTypeArray(typedArray)
-    } finally {
-      typedArray.recycle()
-    }
-  }
-
-  private fun getAttrs(attributeSet: AttributeSet, defStyleAttr: Int) {
+  private fun getAttrs(attributeSet: AttributeSet?, defStyleAttr: Int) {
     val typedArray = context.obtainStyledAttributes(
       attributeSet,
       R.styleable.DoubleLiftLayout,
