@@ -163,6 +163,7 @@ class DoubleLiftLayout
   fun expand() = expand { }
 
   /** Expand the width and height size sequentially. */
+  @JvmSynthetic
   fun expand(doAfterLift: () -> Unit) {
     post {
       if (!this.isExpanded && !this.isLifting) {
@@ -180,6 +181,7 @@ class DoubleLiftLayout
   fun collapse() = collapse { }
 
   /** Collapse the width and height size sequentially. */
+  @JvmSynthetic
   fun collapse(doAfterLift: () -> Unit) {
     post {
       if (this.isExpanded && !this.isLifting) {
@@ -271,6 +273,7 @@ class DoubleLiftLayout
   }
 
   /** Sets an [OnExpandListener] using a lambda. */
+  @JvmSynthetic
   fun setOnExpandListener(block: (Boolean) -> Unit) {
     this.onExpandListener = object : OnExpandListener {
       override fun onExpand(isExpanded: Boolean) {
@@ -304,6 +307,7 @@ class DoubleLiftLayout
     fun setOnExpandListener(value: OnExpandListener) =
       apply { this.doubleLiftLayout.onExpandListener = value }
 
+    @JvmSynthetic
     fun setOnExpandListener(block: (Boolean) -> Unit) = apply {
       this.doubleLiftLayout.onExpandListener = object : OnExpandListener {
         override fun onExpand(isExpanded: Boolean) {
