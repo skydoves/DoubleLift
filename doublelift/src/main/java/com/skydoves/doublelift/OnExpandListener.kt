@@ -17,7 +17,8 @@
 package com.skydoves.doublelift
 
 /** Interface definition for a callback to be invoked when a [DoubleLiftLayout] is lifted or not. */
-interface OnExpandListener {
+fun interface OnExpandListener {
+
   /** Invoked when the [DoubleLiftLayout] is lifted or not. */
   fun onExpand(isExpanded: Boolean)
 }

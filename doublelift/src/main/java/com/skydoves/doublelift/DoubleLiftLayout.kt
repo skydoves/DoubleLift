@@ -275,11 +275,7 @@ class DoubleLiftLayout
   /** Sets an [OnExpandListener] using a lambda. */
   @JvmSynthetic
   fun setOnExpandListener(block: (Boolean) -> Unit) {
-    this.onExpandListener = object : OnExpandListener {
-      override fun onExpand(isExpanded: Boolean) {
-        block(isExpanded)
-      }
-    }
+    this.onExpandListener = OnExpandListener { isExpanded -> block(isExpanded) }
   }
 
   /** Builder class for creating [DoubleLiftLayout]. */
@@ -309,11 +305,7 @@ class DoubleLiftLayout
 
     @JvmSynthetic
     fun setOnExpandListener(block: (Boolean) -> Unit) = apply {
-      this.doubleLiftLayout.onExpandListener = object : OnExpandListener {
-        override fun onExpand(isExpanded: Boolean) {
-          block(isExpanded)
-        }
-      }
+      this.doubleLiftLayout.onExpandListener = OnExpandListener { isExpanded -> block(isExpanded) }
     }
 
     fun build() = this.doubleLiftLayout
