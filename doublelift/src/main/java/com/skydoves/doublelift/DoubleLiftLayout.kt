@@ -224,7 +224,7 @@ class DoubleLiftLayout
   }
 
   private fun liftHorizontal(liftStart: Float, liftEnd: Float, doAfterLift: () -> Unit) {
-    ValueAnimator.ofFloat(liftStart, liftEnd).apply {
+    ValueAnimator.ofFloat(liftStart, liftEnd).applyAndStart {
       duration = liftHorizontalDuration
       doAfterFinishLift { doAfterLift() }
       applyInterpolator(liftAnimation)
@@ -250,7 +250,7 @@ class DoubleLiftLayout
   }
 
   private fun liftVertical(liftStart: Float, liftEnd: Float, doAfterLift: () -> Unit) {
-    ValueAnimator.ofFloat(liftStart, liftEnd).apply {
+    ValueAnimator.ofFloat(liftStart, liftEnd).applyAndStart {
       duration = liftVerticalDuration
       doAfterFinishLift { doAfterLift() }
       applyInterpolator(liftAnimation)

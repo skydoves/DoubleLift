@@ -18,10 +18,16 @@ package com.skydoves.doublelift
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
+import android.animation.ValueAnimator
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.BounceInterpolator
 import android.view.animation.LinearInterpolator
 import android.view.animation.OvershootInterpolator
+
+internal fun ValueAnimator.applyAndStart(block: ValueAnimator.() -> Unit) {
+  block(this)
+  start()
+}
 
 internal fun Animator.doAfterFinishLift(doAfterLift: () -> Unit) {
   this.addListener(
