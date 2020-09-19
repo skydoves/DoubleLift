@@ -17,7 +17,6 @@
 package com.skydoves.doublelift
 
 /** LiftStartOrientation is an orientation attribute of the starting lift. */
-@Suppress("unused")
 enum class LiftStartOrientation(val value: Int) {
   HORIZONTAL(0),
   VERTICAL(1)

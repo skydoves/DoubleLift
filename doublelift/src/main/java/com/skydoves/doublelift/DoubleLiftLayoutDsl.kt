@@ -17,4 +17,4 @@
 package com.skydoves.doublelift
 
 @DslMarker
-annotation class DoubleLiftLayoutDsl
+internal annotation class DoubleLiftLayoutDsl

@@ -17,7 +17,6 @@
 package com.skydoves.doublelift
 
 /** LiftAnimation is an animation attribute of the expanding and collapsing. */
-@Suppress("unused")
 enum class LiftAnimation(val value: Int) {
   NORMAL(0),
   ACCELERATE(1),
