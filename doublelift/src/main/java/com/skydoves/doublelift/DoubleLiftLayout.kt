@@ -93,10 +93,12 @@ class DoubleLiftLayout
         this.liftStartOrientation.value
       )
     when (liftStartOrientation) {
-      LiftStartOrientation.HORIZONTAL.value -> this.liftStartOrientation =
-        LiftStartOrientation.HORIZONTAL
-      LiftStartOrientation.VERTICAL.value -> this.liftStartOrientation =
-        LiftStartOrientation.VERTICAL
+      LiftStartOrientation.HORIZONTAL.value ->
+        this.liftStartOrientation =
+          LiftStartOrientation.HORIZONTAL
+      LiftStartOrientation.VERTICAL.value ->
+        this.liftStartOrientation =
+          LiftStartOrientation.VERTICAL
     }
     val animation =
       a.getInteger(

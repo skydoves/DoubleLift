@@ -24,12 +24,14 @@ import android.view.animation.LinearInterpolator
 import android.view.animation.OvershootInterpolator
 
 internal fun Animator.doAfterFinishLift(doAfterLift: () -> Unit) {
-  this.addListener(object : AnimatorListenerAdapter() {
-    override fun onAnimationEnd(animation: Animator?) {
-      super.onAnimationEnd(animation)
-      doAfterLift()
+  this.addListener(
+    object : AnimatorListenerAdapter() {
+      override fun onAnimationEnd(animation: Animator?) {
+        super.onAnimationEnd(animation)
+        doAfterLift()
+      }
     }
-  })
+  )
 }
 
 internal fun Animator.applyInterpolator(liftAnimation: LiftAnimation) {
