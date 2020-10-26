@@ -40,7 +40,6 @@ bintray {
       vcsTag = versions.versionName
       released = new Date()
       gpg { sign = true }
-      mavenCentralSync { sync = true }
     }
   }
 }
