@@ -19,14 +19,14 @@ Inspired by "Viewing Labels" from the Trello.
 </p>
 
 ## Including in your project
-[![Download](https://api.bintray.com/packages/devmagician/maven/doublelift/images/download.svg)](https://bintray.com/devmagician/maven/doublelift/_latestVersion)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.skydoves/balloon.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.skydoves%22%20AND%20a:%22balloon%22)
 [![Jitpack](https://jitpack.io/v/skydoves/DoubleLift.svg)](https://jitpack.io/#skydoves/DoubleLift)
 ### Gradle 
 Add below codes to your **root** `build.gradle` file (not your module build.gradle file).
 ```gradle
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
     }
 }
 ```

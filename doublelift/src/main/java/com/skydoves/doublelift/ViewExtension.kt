@@ -30,7 +30,7 @@ internal fun View.visible(value: Boolean) {
 }
 
 /** updates [FrameLayout] params. */
-internal fun ViewGroup.updateLayoutParams(block: ViewGroup.LayoutParams.() -> Unit) {
+internal inline fun ViewGroup.updateLayoutParams(block: ViewGroup.LayoutParams.() -> Unit) {
   layoutParams?.let {
     val params: ViewGroup.LayoutParams =
       (layoutParams as ViewGroup.LayoutParams).apply { block(this) }

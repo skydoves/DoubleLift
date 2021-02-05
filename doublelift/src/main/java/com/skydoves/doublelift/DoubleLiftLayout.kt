@@ -192,7 +192,7 @@ class DoubleLiftLayout
     }
   }
 
-  private fun lift(doAfterLift: () -> Unit = {}) {
+  private inline fun lift(crossinline doAfterLift: () -> Unit = {}) {
     setVisibilityChildren(false)
     when (this.liftStartOrientation) {
       LiftStartOrientation.HORIZONTAL -> liftHorizontal(VOID, FULLY) {
@@ -216,14 +216,18 @@ class DoubleLiftLayout
     }
   }
 
-  private fun doAfter(doAfterLift: () -> Unit = {}) {
+  private inline fun doAfter(crossinline doAfterLift: () -> Unit = {}) {
     this.onExpandListener?.onExpand(this.isExpanded)
     this.isLifting = false
     setVisibilityChildren(true)
     doAfterLift()
   }
 
-  private fun liftHorizontal(liftStart: Float, liftEnd: Float, doAfterLift: () -> Unit) {
+  private inline fun liftHorizontal(
+    liftStart: Float,
+    liftEnd: Float,
+    crossinline doAfterLift: () -> Unit
+  ) {
     ValueAnimator.ofFloat(liftStart, liftEnd).applyAndStart {
       duration = liftHorizontalDuration
       doAfterFinishLift { doAfterLift() }

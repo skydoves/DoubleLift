@@ -19,45 +19,49 @@ package com.skydoves.doubleliftdemo
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.cardView0
-import kotlinx.android.synthetic.main.activity_main.cardView1
-import kotlinx.android.synthetic.main.activity_main.doubleLiftLayout
-import kotlinx.android.synthetic.main.activity_main.doubleLiftLayout2
-import kotlinx.android.synthetic.main.activity_main.doubleLiftLayout3
-import kotlinx.android.synthetic.main.activity_main.doubleLiftLayout4
-import kotlinx.android.synthetic.main.activity_main.doubleLiftLayout5
-import kotlinx.android.synthetic.main.activity_main.doubleLiftLayout6
-import kotlinx.android.synthetic.main.activity_main.doubleLiftLayout7
+import com.skydoves.doubleliftdemo.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
 
-    cardView0.setOnClickListener {
-      if (!doubleLiftLayout.isExpanded) {
-        doubleLiftLayout.expand()
-        doubleLiftLayout2.expand()
-        doubleLiftLayout3.expand { Toast.makeText(this, "expanded", Toast.LENGTH_SHORT).show() }
-      } else {
-        doubleLiftLayout.collapse()
-        doubleLiftLayout2.collapse()
-        doubleLiftLayout3.collapse { Toast.makeText(this, "collapsed", Toast.LENGTH_SHORT).show() }
+    val binding = ActivityMainBinding.inflate(layoutInflater)
+    setContentView(binding.root)
+
+    with(binding) {
+      cardView0.setOnClickListener {
+        if (!doubleLiftLayout.isExpanded) {
+          doubleLiftLayout.expand()
+          doubleLiftLayout2.expand()
+          doubleLiftLayout3.expand {
+            Toast.makeText(applicationContext, "expanded", Toast.LENGTH_SHORT).show()
+          }
+        } else {
+          doubleLiftLayout.collapse()
+          doubleLiftLayout2.collapse()
+          doubleLiftLayout3.collapse {
+            Toast.makeText(applicationContext, "collapsed", Toast.LENGTH_SHORT).show()
+          }
+        }
       }
-    }
 
-    cardView1.setOnClickListener {
-      if (!doubleLiftLayout4.isExpanded) {
-        doubleLiftLayout4.expand()
-        doubleLiftLayout5.expand()
-        doubleLiftLayout6.expand()
-        doubleLiftLayout7.expand { Toast.makeText(this, "expanded", Toast.LENGTH_SHORT).show() }
-      } else {
-        doubleLiftLayout4.collapse()
-        doubleLiftLayout5.collapse()
-        doubleLiftLayout6.collapse()
-        doubleLiftLayout7.collapse { Toast.makeText(this, "collapsed", Toast.LENGTH_SHORT).show() }
+      cardView1.setOnClickListener {
+        if (!doubleLiftLayout4.isExpanded) {
+          doubleLiftLayout4.expand()
+          doubleLiftLayout5.expand()
+          doubleLiftLayout6.expand()
+          doubleLiftLayout7.expand {
+            Toast.makeText(applicationContext, "expanded", Toast.LENGTH_SHORT).show()
+          }
+        } else {
+          doubleLiftLayout4.collapse()
+          doubleLiftLayout5.collapse()
+          doubleLiftLayout6.collapse()
+          doubleLiftLayout7.collapse {
+            Toast.makeText(applicationContext, "collapsed", Toast.LENGTH_SHORT).show()
+          }
+        }
       }
     }
   }

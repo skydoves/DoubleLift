@@ -24,12 +24,12 @@ import android.view.animation.BounceInterpolator
 import android.view.animation.LinearInterpolator
 import android.view.animation.OvershootInterpolator
 
-internal fun ValueAnimator.applyAndStart(block: ValueAnimator.() -> Unit) {
+internal inline fun ValueAnimator.applyAndStart(block: ValueAnimator.() -> Unit) {
   block(this)
   start()
 }
 
-internal fun Animator.doAfterFinishLift(doAfterLift: () -> Unit) {
+internal inline fun Animator.doAfterFinishLift(crossinline doAfterLift: () -> Unit) {
   this.addListener(
     object : AnimatorListenerAdapter() {
       override fun onAnimationEnd(animation: Animator?) {

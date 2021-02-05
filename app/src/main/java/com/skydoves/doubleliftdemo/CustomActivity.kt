@@ -18,35 +18,39 @@ package com.skydoves.doubleliftdemo
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_custom.*
+import com.skydoves.doubleliftdemo.databinding.ActivityCustomBinding
 
 class CustomActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_custom)
 
-    doubleLiftLayout.setOnClickListener {
-      if (doubleLiftLayout.isExpanded) {
-        doubleLiftLayout.collapse()
-      } else {
-        doubleLiftLayout.expand()
+    val binding = ActivityCustomBinding.inflate(layoutInflater)
+    setContentView(binding.root)
+
+    with(binding) {
+      doubleLiftLayout.setOnClickListener {
+        if (doubleLiftLayout.isExpanded) {
+          doubleLiftLayout.collapse()
+        } else {
+          doubleLiftLayout.expand()
+        }
       }
-    }
 
-    doubleLiftLayout2.setOnClickListener {
-      if (doubleLiftLayout2.isExpanded) {
-        doubleLiftLayout2.collapse()
-      } else {
-        doubleLiftLayout2.expand()
+      doubleLiftLayout2.setOnClickListener {
+        if (doubleLiftLayout2.isExpanded) {
+          doubleLiftLayout2.collapse()
+        } else {
+          doubleLiftLayout2.expand()
+        }
       }
-    }
 
-    doubleLiftLayout3.setOnClickListener {
-      if (doubleLiftLayout3.isExpanded) {
-        doubleLiftLayout3.collapse()
-      } else {
-        doubleLiftLayout3.expand()
+      doubleLiftLayout3.setOnClickListener {
+        if (doubleLiftLayout3.isExpanded) {
+          doubleLiftLayout3.collapse()
+        } else {
+          doubleLiftLayout3.expand()
+        }
       }
     }
   }

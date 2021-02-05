@@ -23,7 +23,7 @@ import android.content.Context
 /** creates an instance of [DoubleLiftLayout] by [DoubleLiftLayout.Builder] using kotlin dsl. */
 @JvmSynthetic
 @DoubleLiftLayoutDsl
-fun doubleLiftLayout(
+inline fun doubleLiftLayout(
   context: Context,
   block: DoubleLiftLayout.Builder.() -> Unit
 ): DoubleLiftLayout =
